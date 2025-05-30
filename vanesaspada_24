@@ -1,0 +1,51 @@
+public class Document implements DocumentPrototype {
+
+    private String title;
+    private String content;
+    private String footer;
+    private DocumentType type;
+
+    public Document(String title, String content, String footer, DocumentType type) {
+        this.title = title;
+        this.content = content;
+        this.footer = footer;
+        this.type = type;
+    }
+    public Document setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+    public Document setContent(String content) {
+        this.content = content;
+        return this;
+    }
+    public Document setFooter(String footer) {
+        this.footer = footer;
+        return this;
+    }
+    public Document setType(String type) {
+        //this.type = type;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Document{" +
+                "title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", footer='" + footer + '\'' +
+                ", type=" + type +
+                '}';
+    }
+
+    @Override
+    public Document clone() {
+        try{
+            return (Document) super.clone();
+
+        }catch (CloneNotSupportedException cnse) {
+            System.out.println();
+            return null;
+        }
+    }
+}
